@@ -1,0 +1,28 @@
+Bionic Voice bundles the following third-party components. The complete source code of
+Bionic Voice itself is included in the "source" folder.
+
+Models
+  Kokoro-82M voice model and voices    Apache License 2.0    https://huggingface.co/hexgrad/Kokoro-82M
+    (ONNX export from kokoro-onnx: https://github.com/thewh1teagle/kokoro-onnx)
+  Silero VAD                           MIT License           https://github.com/snakers4/silero-vad
+
+Libraries
+  espeak-ng (espeak-ng.dll and data)   GNU GPL v3            https://github.com/espeak-ng/espeak-ng
+  phonemizer                           GNU GPL v3            https://github.com/bootphon/phonemizer
+  espeakng-loader                      MIT License           https://github.com/thewh1teagle/espeakng-loader
+  kokoro-onnx                          MIT License           https://github.com/thewh1teagle/kokoro-onnx
+  ONNX Runtime                         MIT License           https://github.com/microsoft/onnxruntime
+  NumPy                                BSD 3-Clause          https://numpy.org
+  sounddevice                          MIT License           https://github.com/spatialaudio/python-sounddevice
+    PortAudio                          MIT-style license     https://www.portaudio.com
+  keyboard                             MIT License           https://github.com/boppreh/keyboard
+  uiautomation                         Apache License 2.0    https://github.com/yinkaisheng/Python-UIAutomation-for-Windows
+  comtypes                             MIT License           https://github.com/enthought/comtypes
+  Python and Tcl/Tk                    PSF License / Tcl license   https://www.python.org
+
+Because espeak-ng and phonemizer are GPL v3, this package as a whole is distributed under
+the terms of the GNU GPL v3 (https://www.gnu.org/licenses/gpl-3.0.html). The source code of
+the GPL components is available at the links above.
+
+Bionic is a product of LM Studio (Element Labs). Bionic Voice is an independent add-on and is
+not made by or affiliated with LM Studio.

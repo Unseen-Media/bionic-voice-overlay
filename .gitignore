@@ -1,0 +1,18 @@
+# Personal settings and logs (created on first run)
+config.json
+overlay.log
+selftest.txt
+
+# Models are downloaded by download_models.py (too large for git)
+models/*
+!models/.gitkeep
+
+# Extra voices people add themselves
+voices/*
+!voices/.gitkeep
+
+# Build output
+build/
+dist/
+__pycache__/
+*.pyc

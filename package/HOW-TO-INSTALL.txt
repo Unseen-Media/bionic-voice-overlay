@@ -1,0 +1,44 @@
+BIONIC VOICE - talk to Bionic with a hotkey and hear its answers in a local voice
+==================================================================================
+
+What you need
+  - Windows 10 or 11 with Bionic (by LM Studio) installed.
+  - A microphone. Everything runs on your own computer; nothing is sent online.
+
+Install
+  1. Unzip this folder somewhere permanent, e.g. Documents\BionicVoice.
+     (Keep everything together: BionicVoice.exe needs the _internal and models folders.)
+  2. Double-click BionicVoice.exe.
+     Windows may say "Windows protected your PC" because the app isn't signed:
+     click "More info", then "Run anyway".
+
+Set up Bionic once
+  3. In Bionic, pick a model in the chat box ("Choose a model").
+  4. Click the microphone button in Bionic's chat box and set up voice transcription
+     (pick a voice model). Bionic does the speech-to-text itself.
+
+Use it
+  A slim panel docks to the side of Bionic's window.
+    Hold F8   talk while holding, let go to send
+    Tap F8    talk hands-free; it sends after a short silence or when you tap again
+    F7        misspoke? clear it and try again (nothing is sent)
+    F9        stop reading the answer aloud
+    Shift+F9  read the last answer again
+  Hover over any panel button to see what it does. Voices, speed, auto-stop time and
+  the hotkeys can all be changed from the panel (Voice, Speed, Setup buttons).
+
+Start together with Bionic
+  Click Setup on the panel and tick "Start automatically with Windows".
+  Bionic Voice then starts when you sign in, stays invisible, and appears next to
+  Bionic whenever you open it. Untick it to turn that off.
+
+Uninstall
+  Untick "Start automatically with Windows", click Quit on the panel, delete the folder.
+
+If something doesn't work
+  - "Bionic's chat box isn't on screen": open a chat in Bionic (not Settings).
+  - "Voice transcription isn't set up": do step 4 above.
+  - Your antivirus might warn about the global hotkeys (the app listens for F7/F8/F9
+    to work while Bionic is in the background). That is all it uses the keyboard for;
+    the full source code is in the "source" folder.
+  - Details of any error are in overlay.log next to BionicVoice.exe.

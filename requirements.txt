@@ -1,0 +1,5 @@
+kokoro-onnx>=0.6
+sounddevice>=0.5
+keyboard>=0.13
+numpy
+uiautomation>=2.0
