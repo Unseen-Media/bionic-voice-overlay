@@ -5,7 +5,7 @@ import os
 import sys
 import threading
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 
 # Next to BionicVoice.exe when packaged, next to this file when run from source.
 APP_DIR = os.path.dirname(sys.executable if getattr(sys, "frozen", False) else os.path.abspath(__file__))

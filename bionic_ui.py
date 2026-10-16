@@ -44,11 +44,19 @@ class BionicUI:
             raise BionicError("Bionic isn't open.")
         return self.uia.ElementFromHandle(hwnd)
 
+    def _any_name(self, names):
+        """A condition matching any of `names`.
+
+        Built as a balanced tree: UI Automation fails with E_UNEXPECTED on deeply nested
+        conditions, and a simple chain over every language's labels gets ~55 levels deep.
+        """
+        if len(names) == 1:
+            return self.uia.CreatePropertyCondition(auto.PropertyId.NameProperty, names[0])
+        mid = len(names) // 2
+        return self.uia.CreateOrCondition(self._any_name(names[:mid]), self._any_name(names[mid:]))
+
     def _find(self, root, names, control_type=None, visible_only=True):
-        cond = None
-        for name in names:
-            c = self.uia.CreatePropertyCondition(auto.PropertyId.NameProperty, name)
-            cond = c if cond is None else self.uia.CreateOrCondition(cond, c)
+        cond = self._any_name(list(names))
         if control_type is not None:
             cond = self.uia.CreateAndCondition(
                 cond, self.uia.CreatePropertyCondition(auto.PropertyId.ControlTypeProperty, control_type))

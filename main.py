@@ -415,8 +415,16 @@ def selftest(path):
         found = labels.load([winutil.bionic_install_dir() or ""])
         lines.append(f"bionic labels: {len(found['start'])} languages")
         with auto.UIAutomationInitializerInThread():
-            BionicUI(winutil.find_bionic_window, found)
-        lines.append("ui automation: ok")
+            ui = BionicUI(winutil.find_bionic_window, found)
+            lines.append("ui automation: ok")
+            if winutil.find_bionic_window() is None:
+                lines.append("bionic chat box: skipped (Bionic isn't open)")
+            else:
+                try:
+                    _, mic = ui._composer()
+                    lines.append(f"bionic chat box: found (mic button: {mic.CurrentName})")
+                except BionicError as e:
+                    lines.append(f"bionic chat box: not checked ({e})")
         lines.append(f"voices: {len(voices.builtin(config.path(cfg['voices_file'])))} built-in")
         lines.append("RESULT: ok")
     except Exception as e:
